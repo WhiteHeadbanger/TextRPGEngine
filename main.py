@@ -1,8 +1,6 @@
 import json
 import time, os
 
-THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
-
 class RPGScript:
 
     def __init__(self, path):
@@ -74,6 +72,8 @@ class DialogManagement:
         return self.rtext[dialog_number][1]
 
 def main():
+    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+    
     text = RPGScript(os.path.join(THIS_FOLDER, 'dialog.json'))
     text_parsed = text.parse_file()
     dialog = DialogManagement(text_parsed, "John", "Tutorial")
