@@ -73,29 +73,32 @@ class DialogManagement:
         """
         return self.rtext[dialog_number][1]
 
+def main():
+    text = RPGScript(os.path.join(THIS_FOLDER, 'dialog.json'))
+    text_parsed = text.parse_file()
+    dialog = DialogManagement(text_parsed, "John", "Tutorial")
 
-text = RPGScript(os.path.join(THIS_FOLDER, 'dialog.json'))
-text_parsed = text.parse_file()
-dialog = DialogManagement(text_parsed, "John", "Tutorial")
 
+    running = True
+    dialog.show_quest()
+    while running:
+        print("------ Options ------")
+        print("1. {}".format(dialog.user_response(0)))
+        print("2. {}".format(dialog.user_response(1)))
+        print("3. {}".format(dialog.user_response(2)))
+        print("(Q)uit")
+        opc = input(">>: ").lower()
+        if opc == "1":
+            print(dialog.npc_response(0))
+        elif opc == "2":
+            print(dialog.npc_response(1))
+        elif opc == "3":
+            print(dialog.npc_response(2))
+        elif opc == 'q':
+            running = False
 
-running = True
-dialog.show_quest()
-while running:
-    print("------ Options ------")
-    print("1. {}".format(dialog.user_response(0)))
-    print("2. {}".format(dialog.user_response(1)))
-    print("3. {}".format(dialog.user_response(2)))
-    print("(Q)uit")
-    opc = input(">>: ").lower()
-    if opc == "1":
-        print(dialog.npc_response(0))
-    elif opc == "2":
-        print(dialog.npc_response(1))
-    elif opc == "3":
-        print(dialog.npc_response(2))
-    elif opc == 'q':
-        running = False
+if __name__ == "__main__":
+    main()
 
 
             
