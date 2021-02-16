@@ -1,0 +1,19 @@
+{
+    "John":
+    {
+        "Tutorial":
+        {
+            "Text":
+            [
+                "Hi, this is a simple dialog",
+                "Choose an answer and I will answer appropiately"
+            ],
+            "Response":
+            [
+                ["Hi John, how are you?", "I'm very good, thanks!"],
+                ["What's this?", "This is a dialog script demo."],
+                ["What else can you do?", "For now that's it!."]
+            ]    
+        }
+    }
+}
